@@ -1,7 +1,6 @@
 package zd;
 
 import java.io.*;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -15,7 +14,6 @@ public class Main {
 
         while (true) {
 
-            System.out.println("Hello");
             System.out.print("Enter IP address or 'quit' to exit: ");
             String answer = in.nextLine();
 
@@ -31,11 +29,33 @@ public class Main {
             //  Reader.readFile();
             reader.readFile();
 
+            if(access(answer, reader)){
+                System.out.println("Access allowed");
+            } else{
+                System.out.println("Access disallowed");
+            }
 
 
-            System.out.printf("IP: %s\n", answer);
+
+           /* for(int i = 0; i < reader.getAddressIP().size(); i++) {
+                if (reader.getAddressIP().get(i).equals(answer)){
+                    System.out.println("Access disallowed");
+                }
+            }*/
+            //System.out.println("Access allowed");
+
+            //System.out.printf("IP: %s\n", answer);
 
         }
+    }
+
+    public static boolean access(String answer, Reader reader){
+        for(int i = 0; i < reader.getAddressIP().size(); i++) {
+            if (reader.getAddressIP().get(i).equals(answer)){
+                return false;
+            }
+        }
+        return true;
     }
 
 }
