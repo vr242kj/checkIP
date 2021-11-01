@@ -2,6 +2,13 @@ package zd;
 
 public class ValidatorIP implements Validator {
 
+
+    /**
+     * Функція для провірки коректного вводу ip адреси  {@link ValidatorIP#validIP}
+     * @param ip - ip яке ввів користувач
+     * @return true - якщо ip адреса введена правильно
+     *         false - якщо ip адреса введена не правильно
+     */
     public static boolean validIP (String ip) {
         try {
             if ( ip == null || ip.isEmpty() ) {
