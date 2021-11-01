@@ -10,7 +10,7 @@ public class Main {
 
         Scanner in = new Scanner(System.in);
 
-        Reader reader = new Reader();
+        FileReader reader = new FileReader();
 
         while (true) {
 
@@ -22,22 +22,22 @@ public class Main {
                 System.exit(0);
             }
 
-            if (!Validator.validIP(answer)) {
+            if (!ValidatorIP.validIP(answer)) {
                 System.out.println("Invalid IP address");
-            }
-
-            //  Reader.readFile();
-            reader.readFile();
-
-            if (access(answer, reader)) {
-                System.out.println("Access allowed");
             } else {
-                System.out.println("Access disallowed");
+                //  Reader.readFile();
+                reader.readFile();
+
+                if (access(answer, reader)) {
+                    System.out.println("Access allowed");
+                } else {
+                    System.out.println("Access disallowed");
+                }
             }
         }
     }
 
-    public static boolean access(String answer, Reader reader) {
+    public static boolean access(String answer, FileReader reader) {
         for (int i = 0; i < reader.getAddressIP().size(); i++) {
             if (reader.getAddressIP().get(i).equals(answer)) {
                 return false;
