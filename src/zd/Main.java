@@ -29,29 +29,17 @@ public class Main {
             //  Reader.readFile();
             reader.readFile();
 
-            if(access(answer, reader)){
+            if (access(answer, reader)) {
                 System.out.println("Access allowed");
-            } else{
+            } else {
                 System.out.println("Access disallowed");
             }
-
-
-
-           /* for(int i = 0; i < reader.getAddressIP().size(); i++) {
-                if (reader.getAddressIP().get(i).equals(answer)){
-                    System.out.println("Access disallowed");
-                }
-            }*/
-            //System.out.println("Access allowed");
-
-            //System.out.printf("IP: %s\n", answer);
-
         }
     }
 
-    public static boolean access(String answer, Reader reader){
-        for(int i = 0; i < reader.getAddressIP().size(); i++) {
-            if (reader.getAddressIP().get(i).equals(answer)){
+    public static boolean access(String answer, Reader reader) {
+        for (int i = 0; i < reader.getAddressIP().size(); i++) {
+            if (reader.getAddressIP().get(i).equals(answer)) {
                 return false;
             }
         }

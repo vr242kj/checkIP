@@ -17,16 +17,18 @@ public class Reader {
 
     public void readFile() throws IOException {
 
+        addressIP.clear();
         String fileName = "C:\\Users\\Vetal\\Desktop\\checkIP\\src\\zd\\blacklist.txt";
         File file = new File(fileName);
         FileReader fr = new FileReader(file);
         BufferedReader br = new BufferedReader(fr);
         String line;
-        while((line = br.readLine()) != null){
-            //обрабатываем считанную строку - пишем ее в консоль
-            //System.out.println(line);
+
+        while ((line = br.readLine()) != null) {
+
             addressIP.add(line);
         }
+
         br.close();
         fr.close();
     }
