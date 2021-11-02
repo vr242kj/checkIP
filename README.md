@@ -6,7 +6,7 @@ address for verification. The entered IP address must be checked
 for validity and blacklisting. If the entered IP address is invalid, then the program should display the message
 Invalid IP address.
 If there is an IP address in the blacklist, the program should display the message "Access disallowed".
-If the IP address is not in the blacklist, the program should display the phrase "Accessallowed"
+If the IP address is not in the blacklist, the program should display the phrase "Access allowed"
 
 When starting the program and after each check, the program must write "Enter IP address or 'quit' to exit" 
 and after entering the value, check the validity of the entered IP address and its presence in the black list. 
